@@ -45,10 +45,13 @@
               id="cotegory"
               class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
               <option value="All" selected>All</option>
-              <option value="Bird">Bird</option>
-              <option value="Reptile">Reptile</option>
-              <option value="Mammal">Mammal</option>
-              <option value="Fish">Fish</option>
+              <option value="Bird">Qushlar</option>
+              <option value="Reptile">Hashtaklar</option>
+              <option value="Mammal">Sutemizuvchilar</option>
+              <option value="Fish">Baliqlar</option>
+              <option value="Arachnid">O‘rgimchaklar</option>
+              <option value="Amphibian">Amfibiya</option>
+              <option value="Insect">Hasharotlar</option>
             </select>
           </form>
         </div>
@@ -80,14 +83,80 @@
         id="container"
         class="grid grid-cols-1 gap-4 min-[410px]:flex min-[410px]:flex-col min-[410px]:items-center min-[410px]:justify-center sm:grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"></section>
 
-      <section id="homeContainer" class="hidden">
-        <div class="flex items-center justify-start gap-4">
-          <div>
-            <h2 id="username"></h2>
+      <section
+        id="homeContainer"
+        class="hidden flex flex-col items-center justify-center">
+        <div
+          class="relative bg-neutral-primary-soft max-w-xs w-full p-6 border border-default rounded-base shadow-xs">
+          <button
+            id="dropdownButton"
+            data-dropdown-toggle="dropdown"
+            class="absolute top-2 end-2 text-body hover:text-heading bg-neutral-primary-soft box-border border border-transparent hover:bg-neutral-tertiary focus:ring-4 focus:ring-neutral-tertiary rounded-base p-1.5 focus:outline-none"
+            type="button">
+            <span class="sr-only">Open dropdown</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="3"
+                d="M6 12h.01m6 0h.01m5.99 0h.01" />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdown"
+            class="z-10 bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-36 block hidden">
+            <ul
+              class="p-2 text-sm text-body font-medium"
+              aria-labelledby="dropdownButton">
+              <button
+                id="theme-toggle"
+                type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <li>
+                <a
+                  id="logout"
+                  href="#"
+                  class="inline-flex items-center w-full p-2 text-fg-danger hover:bg-neutral-tertiary-medium rounded-md"
+                  >Log Out</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center">
             <div
-              class="relative w-10 h-10 overflow-hidden bg-neutral-secondary-medium rounded-full">
+              id="profileIMG"
+              class="relative w-17 h-17 overflow-hidden bg-neutral-secondary-medium flex flec items-center justify-center rounded-full">
               <svg
-                class="absolute w-12 h-12 text-body-subtle -left-1"
+                class="absolute w-22 h-22 text-body-subtle -left-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -97,88 +166,14 @@
                   clip-rule="evenodd"></path>
               </svg>
             </div>
+            <h5
+              id="userNamw"
+              class="mb-0.5 text-xl font-semibold tracking-tight text-heading"></h5>
+            <span class="text-sm text-body">Visual Designer</span>
           </div>
-          <button
-            id="theme-toggle"
-            type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-            <svg
-              id="theme-toggle-dark-icon"
-              class="hidden w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg
-              id="theme-toggle-light-icon"
-              class="hidden w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd"
-                clip-rule="evenodd"></path>
-            </svg>
-          </button>
         </div>
       </section>
     </main>
-    <template id="cardTemplate">
-      <div
-        class="bg-neutral-primary-soft qwert overflow-hidden h-full w-full block max-[350px]:h-[300px] max-[350px]:h-[300px] max-w-sm p-6 border border-default rounded-base shadow-xs">
-        <h5
-          class="mt-6 mb-2 text-2xl js-title font-semibold tracking-tight text-heading"></h5>
-        <p class="mb-6 text-body font-bold">
-          Yashash Joyi:
-          <span class="js-habitat font-normal"></span>
-        </p>
-        <p class="mb-6 text-body font-bold">
-          category:
-          <span class="js-category font-normal"></span>
-        </p>
-        <p class="mb-6 text-body font-bold">
-          Yovvoyimi:
-          <span class="js-isWild font-normal"></span>
-        </p>
-        <p class="mb-6 text-body font-bold">
-          Qanday Ovoz Chiqaradi:
-          <span class="js-soundText font-normal"></span>
-        </p>
-        <div class="flex gap-3 items-end justify-end">
-          <button
-            type="button"
-            class="text-white js-delete-btn bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-            <svg
-              class="w-4 h-4 text-white text-gray-800 dark:text-white pointer-events-none"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 16">
-              <path
-                d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z" />
-            </svg>
-          </button>
-
-          <!-- onclick="editModal.showModal()" -->
-          <button
-            type="button"
-            class="text-white js-edit-btn bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-            <svg
-              class="w-4 h-4 text-white text-gray-800 dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20">
-              <path
-                d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </template>
 
     <div
       id="toast"
@@ -283,62 +278,64 @@
       </div>
     </footer>
 
-    <!-- Modal toggle -->
-    <dialog id="editModal">
-      <form method="dialog">
-        <button>
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.6583 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z"
-              fill="currentColor"
-              fill-rule="evenodd"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-      </form>
+    <dialog
+      data-modal-target="editModal"
+      data-modal-toggle="editModal"
+      id="editModal"
+      class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 max-h-full">
+      <button type="button">
+        <svg
+          class="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            fill-rule="evenodd"
+            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
       <form id="editForm">
         <div class="grid gap-4 grid-cols-2 py-4 md:py-6">
           <div class="col-span-2">
             <label
-              for="name"
+              for="ename"
               class="block mb-2.5 text-sm font-medium text-heading"
               >Name</label
             >
             <input
               type="text"
               name="name"
-              id="name"
+              id="ename"
               class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
               placeholder="Animal name" />
           </div>
           <div class="col-span-2 sm:col-span-1">
             <label
-              for="soundText"
+              for="esoundText"
               class="block mb-2.5 text-sm font-medium text-heading"
               >soundText</label
             >
             <input
               type="text"
               name="soundText"
-              id="soundText"
+              id="esoundText"
               class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
               placeholder="soundText" />
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label
-              for="category"
+              for="ecategory"
               class="block mb-2.5 text-sm font-medium text-heading"
               >Category</label
             >
             <select
               name="category"
-              id="category"
+              id="ecategory"
               class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body">
               <option value="Bird">Bird</option>
               <option value="Mammal" selected>Mammal</option>
@@ -348,26 +345,26 @@
           </div>
           <div class="col-span-2 sm:col-span-1">
             <label
-              for="habitat"
+              for="ehabitat"
               class="block mb-2.5 text-sm font-medium text-heading"
               >habitat</label
             >
             <input
               type="text"
               name="habitat"
-              id="habitat"
+              id="ehabitat"
               class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
               placeholder="habitat" />
           </div>
           <div class="col-span-2 sm:col-span-1">
             <label
-              for="isWild"
+              for="eisWild"
               class="block mb-2.5 text-sm font-medium text-heading"
               >IsWild</label
             >
             <select
               name="isWild"
-              id="isWild"
+              id="eisWild"
               class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body">
               <option value="true">Yes</option>
               <option value="false" selected>No</option>
@@ -395,7 +392,7 @@
                 stroke-width="2"
                 d="M5 12h14m-7 7V5" />
             </svg>
-            Add new Animal
+            Edit Animal
           </button>
           <button
             data-modal-hide="crud-modal"
@@ -406,8 +403,7 @@
         </div>
       </form>
     </dialog>
-    <!-- Main modal -->
-    <!-- <dialog id="add"> -->
+
     <div
       id="crud-modal"
       tabindex="-1"
@@ -482,10 +478,14 @@
                   name="category"
                   id="category"
                   class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-3 py-2.5 shadow-xs placeholder:text-body">
-                  <option value="Bird">Bird</option>
-                  <option value="Mammal" selected>Mammal</option>
-                  <option value="Reptile">Reptile</option>
-                  <option value="Fish">Fish</option>
+                  <option value="All">All</option>
+                  <option value="Bird" selected>Qushlar</option>
+                  <option value="Reptile">Hashtaklar</option>
+                  <option value="Mammal">Sutemizuvchilar</option>
+                  <option value="Fish">Baliqlar</option>
+                  <option value="Arachnid">O‘rgimchaklar</option>
+                  <option value="Amphibian">Amfibiya</option>
+                  <option value="Insect">Hasharotlar</option>
                 </select>
               </div>
               <div class="col-span-2 sm:col-span-1">
@@ -550,7 +550,60 @@
         </div>
       </div>
     </div>
-    <!-- </dialog> -->
+    <template id="cardTemplate">
+      <div
+        class="bg-neutral-primary-soft qwert overflow-hidden h-full w-full block max-[350px]:h-[300px] max-[350px]:h-[300px] max-w-sm p-6 border border-default rounded-base shadow-xs">
+        <h5
+          class="mt-6 mb-2 text-2xl js-title font-semibold tracking-tight text-heading"></h5>
+        <p class="mb-6 text-body font-bold">
+          Yashash Joyi:
+          <span class="js-habitat font-normal"></span>
+        </p>
+        <p class="mb-6 text-body font-bold">
+          category:
+          <span class="js-category font-normal"></span>
+        </p>
+        <p class="mb-6 text-body font-bold">
+          Yovvoyimi:
+          <span class="js-isWild font-normal"></span>
+        </p>
+        <p class="mb-6 text-body font-bold">
+          Qanday Ovoz Chiqaradi:
+          <span class="js-soundText font-normal"></span>
+        </p>
+        <div class="flex gap-3 items-end justify-end">
+          <button
+            type="button"
+            class="text-white js-delete-btn bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white text-gray-800 dark:text-white pointer-events-none"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 16">
+              <path
+                d="M19 0H1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1ZM2 6v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6H2Zm11 3a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8a1 1 0 0 1 2 0h2a1 1 0 0 1 2 0v1Z" />
+            </svg>
+          </button>
+
+          <!-- onclick="editModal.showModal()" -->
+          <button
+            data-modal-hide="editModal"
+            type="button"
+            class="text-white js-edit-btn bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20">
+              <path
+                d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </template>
     <!-- success toast -->
     <template id="toast-success">
       <div
@@ -644,7 +697,9 @@
       }
     </script>
 
-    <script src="./js/app.js"></script>
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script type="module" src="./js/app.js"></script>
+    <script src="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.js"></script>
+
+    <!-- <script src="./node_modules/flowbite/dist/flowbite.min.js"></script> -->
   </body>
 </html>

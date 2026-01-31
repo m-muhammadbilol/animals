@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>SignUp</title>
     <link rel="stylesheet" href="./js/login.js" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,13 +32,13 @@
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1
               class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Sign in to your account
+              Sign Up
             </h1>
 
             <form id="loginForm" class="space-y-4 md:space-y-6" action="#">
               <div>
                 <label
-                  for="email"
+                  for="text"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Login</label
                 >
@@ -47,8 +47,9 @@
                   name="username"
                   id="email"
                   class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com" />
+                  placeholder="login" />
               </div>
+
               <div>
                 <label
                   for="password"
@@ -65,15 +66,15 @@
               <button
                 type="submit"
                 class="text-white js-submit-btn bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 w-full rounded-base text-sm px-4 py-2.5 focus:outline-none">
-                Sign in
+                Sign up
               </button>
 
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?
+                You can Log in
                 <a
-                  href="./signup.html"
+                  href="./login.html"
                   class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                  >Sign up</a
+                  >Sign in</a
                 >
               </p>
             </form>
@@ -81,8 +82,6 @@
         </div>
       </div>
     </section>
-
-    <!-- success toast -->
     <template id="toast-success">
       <div
         class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default"
@@ -133,7 +132,6 @@
         </button>
       </div>
     </template>
-    <!-- warning toast -->
     <template id="toast-warning">
       <div
         id="toast-warning"
@@ -161,7 +159,7 @@
         <div class="ms-3 text-sm font-normal js-toast"></div>
       </div>
     </template>
-    <script type="module" src="./js/login.js"></script>
+    <script type="module" src="./js/singup.js"></script>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

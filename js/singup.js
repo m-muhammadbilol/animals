@@ -19,7 +19,16 @@ elLoginForm.addEventListener("submit", (evt) => {
           stroke="currentColor" stroke-width="4"/>
       </svg>
     `;
+
   formData.forEach((value, key) => {
+    if (value.trim() === "") {
+      const clone = elToastSucces.cloneNode(true).content;
+      clone.querySelector(".js-span").innerText = `${key}  Toldiring!`;
+      elSubmitBtn.disabled = false;
+      elSubmitBtn.innerHTML = "Sign in";
+      eltoastConteiner.append(clone);
+      return;
+    }
     result[key] = value;
   });
 
@@ -27,20 +36,25 @@ elLoginForm.addEventListener("submit", (evt) => {
 });
 
 function login(data) {
-  fetch("http://localhost:3000/users")
+  fetch("http://localhost:3000/users", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
     .then((res) => {
       return res.json();
     })
     .then((res) => {
       elSubmitBtn.disabled = false;
       elSubmitBtn.innerHTML = "Sign in";
-      localStorage.setItem("token", res.access_token);
-      location.href = "./index.html";
+      localStorage.clear("token");
+
+      location.href = "./Login.html";
     })
     .catch(() => {
+      const clone = eltoastWarning.cloneNode(true).content;
       elSubmitBtn.disabled = false;
       elSubmitBtn.innerHTML = "Sign in";
-      const clone = eltoastWarning.cloneNode(true).content;
       clone.querySelector(".js-toast").innerText = "Parol Yoki Login XATO";
       eltoastConteiner.append(clone);
     });

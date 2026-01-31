@@ -28,15 +28,12 @@ elLoginForm.addEventListener("submit", (evt) => {
 
 function login(data) {
   const token = localStorage.getItem("token");
-  fetch(
-    "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/login",
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
+  fetch("/api/animals", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
     },
-  )
+  })
     .then((res) => {
       return res.json();
     })

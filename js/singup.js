@@ -36,11 +36,14 @@ elLoginForm.addEventListener("submit", (evt) => {
 });
 
 function login(data) {
-  fetch("http://localhost:3000/users", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  })
+  fetch(
+    "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/signup",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    },
+  )
     .then((res) => {
       return res.json();
     })

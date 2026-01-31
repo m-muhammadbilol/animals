@@ -3,9 +3,11 @@
     "@tailwindcss/cli": "^4.1.18",
     "flowbite": "^4.0.1",
     "json-server": "^1.0.0-beta.5",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "tar": "^7.5.7"
   },
   "scripts": {
-    "t": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch"
+    "t": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch",
+    "start": "node server.js"
   }
 }

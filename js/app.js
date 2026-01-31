@@ -61,7 +61,9 @@ function loader(bool) {
   }
 }
 loader(true);
-fetch("http://localhost:3000/animals")
+fetch(
+  "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/animals",
+)
   .then((res) => res.json())
   .then((res) => {
     // console.log(res.data);
@@ -187,14 +189,17 @@ eladdForm.addEventListener("submit", (evt) => {
 
 function addData(data) {
   const tokenK = localStorage.getItem("token");
-  fetch("http://localhost:3000/animals", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + tokenK,
+  fetch(
+    "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/animals",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + tokenK,
+      },
+      body: JSON.stringify(data),
     },
-    body: JSON.stringify(data),
-  })
+  )
     .then((res) => res.json())
     .then((res) => {
       eladdForm.reset();
@@ -248,12 +253,16 @@ elContainer.addEventListener("click", (evt) => {
 
 function deleteCard(id, evt) {
   const tokenK = localStorage.getItem("token");
-  fetch("http://localhost:3000/animals/" + id, {
-    method: "DELETE",
-    headers: {
-      Authorization: "Bearer " + tokenK,
+  fetch(
+    "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/animals/" +
+      id,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + tokenK,
+      },
     },
-  })
+  )
     .then((res) => res.text())
     .then((res) => {
       const clone = eltoastSuccess.content.cloneNode(true);
@@ -320,14 +329,18 @@ elContainer.addEventListener("click", (evt) => {
 
 function edit(editedAnimals) {
   const tokenK = localStorage.getItem("token");
-  fetch("http://localhost:3000/animals/" + editedAnimals.id, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: "Bearer " + tokenK,
+  fetch(
+    "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/animals/" +
+      editedAnimals.id,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: "Bearer " + tokenK,
+      },
+      body: JSON.stringify(editedAnimals),
     },
-    body: JSON.stringify(editedAnimals),
-  })
+  )
     .then((res) => {
       return res.json();
     })

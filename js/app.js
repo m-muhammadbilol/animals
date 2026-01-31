@@ -229,6 +229,28 @@ function isLogin() {
     return true;
   }
 }
+const token = localStorage.getItem("token");
+
+fetch(
+  "https://animals-ar28sldhn-muhammadbilols-projects.vercel.app/api/animals",
+  {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  },
+)
+  .then((res) => {
+    if (!res.ok) throw new Error("Serverdan ruxsat yo'q yoki xato");
+    return res.json();
+  })
+  .then((data) => {
+    cotegory = data;
+    ui(cotegory);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 elAddBtn.addEventListener("click", (e) => {
   const login = isLogin();

@@ -32,7 +32,7 @@ home();
 const elprofileIMG = document.getElementById("profileIMG");
 
 if (isLogin()) {
-  elprofileIMG.innerHTML = `<img src="./img/correct-icon.webp" alt="" />`;
+  elprofileIMG.innerHTML = `<img src="./img/user.png" alt="" />`;
 } else {
   elprofileIMG.innerHTML = `
 <div class="relative w-10 h-10 overflow-hidden bg-neutral-secondary-medium rounded-full">

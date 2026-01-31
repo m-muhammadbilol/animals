@@ -13,18 +13,6 @@
       "isWild": true
     },
     {
-      "id": "211",
-      "name": "1234567uygifkuchg",
-      "category": "Bird",
-      "speed": 50,
-      "soundText": "Hoot",
-      "year": 15,
-      "weight": 2,
-      "color": "Brown",
-      "habitat": "Forest",
-      "isWild": "true"
-    },
-    {
       "id": "212",
       "name": "Hippo",
       "category": "Mammal",
